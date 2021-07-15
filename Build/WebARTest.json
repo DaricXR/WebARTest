@@ -1,9 +1,9 @@
 {
 "companyName": "DefaultCompany",
-"productName": "Unity-WebXR-Export",
+"productName": "ArJs Test",
 "productVersion": "0.1",
 "dataUrl": "WebARTest.data.unityweb",
-"wasmCodeUrl": "WebARTest.wasm",
+"wasmCodeUrl": "WebARTest.wasm.code.unityweb",
 "wasmFrameworkUrl": "WebARTest.wasm.framework.unityweb",
 "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
