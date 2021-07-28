@@ -1,6 +1,6 @@
 {
 "companyName": "DefaultCompany",
-"productName": "TesteWebGL",
+"productName": "WebGLJapaneseInput",
 "productVersion": "1.0",
 "dataUrl": "WebARTest.data.unityweb",
 "wasmCodeUrl": "WebARTest.wasm.code.unityweb",
