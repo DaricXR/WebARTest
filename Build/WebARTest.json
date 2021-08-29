@@ -1,6 +1,6 @@
 {
 "companyName": "DefaultCompany",
-"productName": "ArJs Test",
+"productName": "Delete",
 "productVersion": "0.1",
 "dataUrl": "WebARTest.data.unityweb",
 "wasmCodeUrl": "WebARTest.wasm.code.unityweb",
@@ -12,5 +12,5 @@
 "cacheControl": {"default": "must-revalidate"},
 "developmentBuild": false,
 "multithreading": false,
-"unityVersion": "2019.4.14f1"
+"unityVersion": "2019.4.22f1"
 }
