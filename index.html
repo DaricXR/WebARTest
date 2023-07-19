@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Wordle</title>
+    <title>Unity WebGL Player | BallBlast</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width=600 height=960></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-       <div id="unity-warning"> </div>
+      <div id="unity-warning"> </div>
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Wordle</div>
+        <div id="unity-build-title">BallBlast</div>
       </div>
     </div>
     <script>
@@ -56,14 +56,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WordleNewBuild.loader.js";
+      var loaderUrl = buildUrl + "/WebARTest.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WordleNewBuild.data",
-        frameworkUrl: buildUrl + "/WordleNewBuild.framework.js",
-        codeUrl: buildUrl + "/WordleNewBuild.wasm",
+        dataUrl: buildUrl + "/WebARTest.data",
+        frameworkUrl: buildUrl + "/WebARTest.framework.js",
+        codeUrl: buildUrl + "/WebARTest.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "WordleInc.",
-        productName: "Wordle",
+        companyName: "DefaultCompany",
+        productName: "BallBlast",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
@@ -76,15 +76,27 @@
       // config.matchWebGLToCanvasSize = false;
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
+
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
+
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
+        canvas.style.width = "600px";
+        canvas.style.height = "960px";
       }
+
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
