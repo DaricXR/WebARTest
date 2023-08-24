@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="favicon.ico">
-    <title>face-tracking-face-mesh</title>
+    <title>Tracking</title>
     <style>
         html {
             box-sizing: border-box;
@@ -132,19 +132,19 @@
             <div class="spinner"></div>
         </div>
     </div>
-    <script type="text/javascript" src="https://libs.zappar.com/zappar-cv/2.1.4/zappar-cv.js"></script>
+    <script type="text/javascript" src="https://libs.zappar.com/zappar-cv/2.1.2/zappar-cv.js"></script>
     <script>
         var db = indexedDB.open("dummy_indexdb", 1); // iOS 14.6 fix; the call to open indexdb hangs forever otherwise
 
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/webgl-dist.loader.js";
+        const loaderUrl = buildUrl + "/Build.loader.js";
         const config = {
-            dataUrl: buildUrl + "/885bfcfbf9d3c0f6b50235200ac199b6.data.unityweb",
-            frameworkUrl: buildUrl + "/5206afcc205229595678067ea0097588.js.unityweb",
+            dataUrl: buildUrl + "/ad1f1bb5cd3f857f93a5e678b6168bc2.data.unityweb",
+            frameworkUrl: buildUrl + "/251cb8c91502912f8c3c936e2066bc7b.js.unityweb",
             codeUrl: buildUrl + "/e92769f8a830bf51c9b1e96465035ba5.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
-            companyName: "DefaultCompany",
-            productName: "face-tracking-face-mesh",
+            companyName: "FaceTrack",
+            productName: "Tracking",
             productVersion: "0.1",
         //Useful when used along with Filename as Hashes option
             cacheControl: function (url) {
